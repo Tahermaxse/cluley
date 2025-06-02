@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
+        <Navbar />
         {children}
+        <Footer
+          leftLinks={[
+            { href: "/terms", label: "Terms & policies" },
+            { href: "/privacy-policy", label: "Privacy policy" },
+          ]}
+          rightLinks={[
+            { href: "/careers", label: "Careers" },
+            { href: "/manifesto", label: "Manifesto" },
+            { href: "/help-center", label: "Help Center" },
+            { href: "https://x.com/trycluely", label: "Twitter" },
+            { href: "https://www.instagram.com/trycluely", label: "Instagram" },
+            { href: "https://github.com/cluely", label: "GitHub" },
+          ]}
+          copyrightText="Cluely 2025. All Rights Reserved"
+          barCount={23}
+        />
       </body>
     </html>
   );

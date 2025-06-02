@@ -1,103 +1,102 @@
-import Image from "next/image";
+import CTA from "@/components/CTA";
+import Features from "@/components/Features";
+import Hero from "@/components/Hero";
+import Manifesto from "@/components/Manifesto";
+import Undetectable from "@/components/Undetectable";
+import Usage from "@/components/Usage";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  <>
+  <Hero />
+  <Features
+  title="The turning point of thought"
+  subtitle="Cluely helps with anything it sees or hears."
+  features={[
+    {
+      imageSrc: "https://cluely.com/_next/static/media/bento1.3b364800.png",
+      title: "Sees what you see",
+      description:
+        "Cluely sees and understands all the content on your screen — code, slides, questions, docs, dashboards.",
+      imageAlt: "Screen content visualization",
+    },
+    {
+      imageSrc: "https://cluely.com/_next/static/media/bento2.5d45c6ca.png",
+      title: "Hears what you hear",
+      description:
+        "Cluely listens silently in the background and understands your meetings in real time — without ever joining them.",
+      imageAlt: "Meeting audio visualization",
+    },
+    {
+      imageSrc: "https://cluely.com/_next/static/media/bento3.b9446d98.png",
+      title: "Answers anything",
+      description:
+        "Just press a key. Cluely knows what you’re doing and responds with exactly what matters — no switching tabs, no guesswork.",
+      imageAlt: "Instant response feature",
+    },
+   
+  ]}
+/>
+  <Manifesto />
+  <Undetectable
+  title="Undetectable by design."
+  subtitle="No bots in the room. No Zoom guests. No screen-share trails. Works on everything."
+  headerImageSrc="https://cluely.com/_next/static/media/works.2bbce57b.png"
+  headerImageAlt="Supported platforms"
+  features={[
+    {
+      title: "Doesn’t join meetings",
+      description:
+        "Cluely never shows up in shared screens, recordings, or external meeting tools. It’s fully hidden from everyone but you.",
+      imageSrc: "https://cluely.com/_next/static/media/meeting.d6f4df3a.png",
+      imageAlt: "Doesn’t join meetings-screenshot",
+      reverseOrder: false,
+    },
+    {
+      title: "Invisible to screen-share",
+      description:
+        "Cluely never shows up in shared screens, recordings, or external meeting tools. It’s fully hidden from everyone but you.",
+      imageSrc: "https://cluely.com/_next/static/media/screen.8c07aba8.png",
+      imageAlt: "Invisible to screen-share-screenshot",
+      reverseOrder: true,
+    },
+    {
+      title: "Follow your eyes",
+      description:
+        "Cluely’s window is fully moveable so you can position it exactly where you’re looking — without ever breaking concentration.",
+      imageSrc: "https://cluely.com/_next/static/media/eyes.00797834.png",
+      imageAlt: "Follow your eyes-screenshot",
+      reverseOrder: false,
+    },
+  ]}
+/>
+<Usage
+  title="Three ways Cluely changes how you think."
+  sections={[
+    {
+      title: "Meetings",
+      description:
+        "Cluely hears the conversation and gives you live, context-aware responses to questions, and recalls information from earlier in the transcript so you never lose the thread.",
+      imageSrc: "https://cluely.com/_next/static/media/meeting.c59aeb79.png",
+      imageAlt: "Section 1 image",
+    },
+    {
+      title: "Sales calls",
+      description:
+        "Cluely helps you handle objections and arms non-technical sales reps with product info exactly when it’s needed.",
+      imageSrc: "https://cluely.com/_next/static/media/sales.a83b1a9d.png",
+      imageAlt: "Section 2 image",
+    },
+    {
+      title: "Solo deep work",
+      description:
+        "Even without audio, Cluely reads your screen and responds to prompts or context. Whether you're studying, debugging, writing, or researching, Cluely helps you think.",
+      imageSrc: "https://cluely.com/_next/static/media/deep.b625b59c.png",
+      imageAlt: "Section 3 image",
+    },
+  ]}
+/>
+<CTA />
+  </>
   );
 }
