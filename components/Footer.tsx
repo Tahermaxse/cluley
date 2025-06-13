@@ -10,28 +10,28 @@ interface FooterProps {
   leftLinks: LinkItem[];
   rightLinks: LinkItem[];
   copyrightText: string;
-  barCount?: number; // Number of wave bars
+  barCount?: number; 
 }
 
 const Footer: React.FC<FooterProps> = ({
   leftLinks,
   rightLinks,
   copyrightText,
-  barCount = 23, // Default to 23 to match the JavaScript code
+  barCount = 23, 
 }) => {
   const waveRefs = useRef<(HTMLDivElement | null)[]>([]);
   const footerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const animationFrameRef = useRef<number | null>(null);
 
-  // Intersection Observer to detect when the footer is visible
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.2 } // Trigger when 20% of the footer is visible
+      { threshold: 0.2 } 
     );
 
     if (footerRef.current) {
@@ -45,9 +45,9 @@ const Footer: React.FC<FooterProps> = ({
     };
   }, []);
 
-  // Wave animation when the footer is visible
+
   useEffect(() => {
-    let t = 0; // Time variable for animation
+    let t = 0; 
 
     const animateWave = () => {
       const waveElements = waveRefs.current;
@@ -55,12 +55,12 @@ const Footer: React.FC<FooterProps> = ({
 
       waveElements.forEach((element, index) => {
         if (element) {
-          offset += Math.max(0, 20 * Math.sin((t + index) * 0.3)); // Same formula as in the JS code
+          offset += Math.max(0, 20 * Math.sin((t + index) * 0.3)); 
           element.style.transform = `translateY(${index + offset}px)`;
         }
       });
 
-      t += 0.1; // Increment time (same increment as in the JS code)
+      t += 0.1;
       animationFrameRef.current = requestAnimationFrame(animateWave);
     };
 
@@ -136,11 +136,11 @@ const Footer: React.FC<FooterProps> = ({
               ref={(el) => { waveRefs.current[index] = el; }}
               className="wave-segment"
               style={{
-                height: `${index + 1}px`, // Heights increase from 1px to barCount px
+                height: `${index + 1}px`,
                 backgroundColor: "rgb(255, 255, 255)",
-                transition: "transform 0.1s ease", // Same as in the JS code
+                transition: "transform 0.1s ease",
                 willChange: "transform",
-                marginTop: "-2px", // Same overlap as in the JS code
+                marginTop: "-2px",
               }}
             />
           ))}

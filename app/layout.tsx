@@ -44,7 +44,7 @@ export default function RootLayout({
             { href: "https://www.instagram.com/trycluely", label: "Instagram" },
             { href: "https://github.com/cluely", label: "GitHub" },
           ]}
-          copyrightText="Cluely 2025. All Rights Reserved"
+          copyrightText="Truely 2025. All Rights Reserved"
           barCount={23}
         />
       </body>

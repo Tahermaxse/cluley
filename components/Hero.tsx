@@ -28,7 +28,7 @@ const Hero = () => {
           Everything You Need. Before You Ask.
         </h1>
         <p className="mx-auto max-w-lg mt-5 text-lg/6 lg:text-xl/6 font-medium text-balance text-zinc-500">
-          Cluely is an undetectable AI that sees your screen, hears your calls,
+          Truely is an undetectable AI that sees your screen, hears your calls,
           and feeds you answers — in real time.
         </p>
         <div className="grid items-center justify-center gap-y-2.5 mt-10">
